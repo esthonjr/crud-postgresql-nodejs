@@ -6,6 +6,8 @@ Este pacote é um exemplo simples de CRUD (Create, read, update and delete) com 
   - [Instalação](#instalação)
   - [Utilização](#utilização)
   - [Instalação do postgresql no linux (exemplo)](#instalação-do-postgresql-no-linux-exemplo)
+  - [Observações](#observações)
+  - [TODO](#todo)
 
 ## Instalação
 ```bash
@@ -92,3 +94,13 @@ $ node delete # para deletar
     testdb=> \q
     ```
 
+## Observações
+
+- Há duas formas de conexão ao bd: single connection ou pool; 
+- Para a leitura de dados no bd, dependendo do volume, pode afetar a performance do sistema porque as informações são carregadas na memória. Existe uma forma de leitura usando cursor que melhora isso daí;
+- Na configuração de conexão ao bd (user, host, database, password, port), podemos colocar hardcoded ou usar variáveis do sistema (assim o código fica mais limpo e resguardamos informações privadas);
+- O código tem exemplo de sintaxe com promises;
+- O pool também usa variáveis de ambiente se não fornecermos as configs.
+
+## TODO
+- Usar cursor pra ler grande volume de dados
