@@ -5,7 +5,7 @@ Este pacote é um exemplo simples de CRUD (Create, read, update and delete) com 
 - [crud-postgresql-nodejs](#crud-postgresql-nodejs)
   - [Instalação](#instalação)
   - [Utilização](#utilização)
-  - [Instalação do postgresql no linux (exemplo)](#instalação-do-postgresql-no-linux-exemplo)
+  - [Configuração do postgresql no linux (exemplo)](#configuração-do-postgresql-no-linux-exemplo)
   - [Observações](#observações)
     - [Para configurar as variáveis de ambiente no linux (exemplo)](#para-configurar-as-variáveis-de-ambiente-no-linux-exemplo)
   - [TODO](#todo)
@@ -26,7 +26,7 @@ $ node insert.js # para inserir
 $ node delete.js # para deletar
 ```
 
-## Instalação do postgresql no linux (exemplo)
+## Configuração do postgresql no linux (exemplo)
 1. Instalar o postgresql: 
    ```bash
    $ sudo apt-get install postgresql
