@@ -5,7 +5,7 @@ Este pacote é um exemplo simples de CRUD (Create, read, update and delete) com 
 - [crud-postgresql-nodejs](#crud-postgresql-nodejs)
   - [Instalação](#instalação)
   - [Utilização](#utilização)
-  - [Configuração do postgresql no linux (exemplo)](#configuração-do-postgresql-no-linux-exemplo)
+  - [Configuração do postgresql Docker (exemplo)](#configuração-do-postgresql-docker-exemplo)
   - [Observações](#observações)
     - [Para configurar as variáveis de ambiente no linux (exemplo)](#para-configurar-as-variáveis-de-ambiente-no-linux-exemplo)
   - [TODO](#todo)
@@ -26,75 +26,16 @@ $ node insert.js # para inserir
 $ node delete.js # para deletar
 ```
 
-## Configuração do postgresql no linux (exemplo)
-1. Instalar o postgresql: 
-   ```bash
-   $ sudo apt-get install postgresql
-   ```
-2. Mudar a senha padrao do usuario postgres: 
-   ```bash
-   $ sudo passwd postgres
-   ``` 
-3. Logar no usuario postgres: 
-   ```bash
-   $ su - postgres
-   ``` 
-4. Usar o comando para checar se o usuario postgres tem acesso ao prompt do postgre: 
-   ```bash
-   $ psql
-   ```
-5. No prompt do postgresql, mudar o password do postgres no bd: 
-   ```
-   postgres=# \password postgres
-   ```
-6. Criar o bd (terminar o comando com ";"): 
-   ```
-   postgres=# CREATE DATABASE testdb;
-   ``` 
-7. Listar o bd: 
-   ```
-   postgres=# \l
-   ```
-8. Criar um novo usuário para o bd, senão tem que usar as credenciais do postgres: 
-   ``` 
-   postgres=# CREATE USER esthonjr;
-   ```
-9.  Listar usuarios pra se certificar que criou ok: 
-    ```
-    postgres=# \du
-    ```
-10. Sair do prompt: 
-    ```
-    postgres=# \q
-    ```
-11. Ainda com o usuario postgres, logar no prompt do bd que foi criado: 
-    ```bash
-    $ psql testdb
-    ```
-12. Dar privilégios para o usuário criado: 
-    ```
-    testdb=# GRANT ALL PRIVILEGES ON DATABASE testdb TO esthonjr;
-    ```
-13. Sair do prompt: 
-    ```
-    testdb=# \q
-    ```
-14. Deslogar do usuario postgres: 
-    ```bash
-    $ exit
-    ```
-15. Agora podemos usar o novo usuario esthonjr para acessar o db! Testar com: 
-    ```bash
-    $ psql testdb
-    ```
-16. Criar um password para o novo usuário: 
-    ```
-    testdb=> \password
-    ```
-17. Sair do prompt: 
-    ```
-    testdb=> \q
-    ```
+## Configuração do postgresql Docker (exemplo)
+No diretório postgres executar:
+```bash
+$ docker-compose up
+```
+Para Conectar ao database. Utilizar o usuario, senha e bd especificados no database.env.
+```
+$ docker-compose run database bash
+# psql --host=database --username=esthonjr --dbname=testdb
+```
 
 ## Observações
 
@@ -121,5 +62,4 @@ $ export PGPORT
 
 ## TODO
 - Modularizar ações
-- postgresql no docker
 - pagina com exibicao do read
