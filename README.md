@@ -5,7 +5,7 @@ Este pacote é um exemplo simples de CRUD (Create, read, update and delete) com 
 - [crud-postgresql-nodejs](#crud-postgresql-nodejs)
   - [Instalação](#instalação)
   - [Utilização](#utilização)
-  - [Configuração do postgresql Docker (exemplo)](#configuração-do-postgresql-docker-exemplo)
+  - [Configuração do postgresql (Docker)](#configuração-do-postgresql-docker)
   - [Observações](#observações)
     - [Para configurar as variáveis de ambiente no linux (exemplo)](#para-configurar-as-variáveis-de-ambiente-no-linux-exemplo)
   - [TODO](#todo)
@@ -26,7 +26,7 @@ $ node insert.js # para inserir
 $ node delete.js # para deletar
 ```
 
-## Configuração do postgresql Docker (exemplo)
+## Configuração do postgresql (Docker)
 No diretório postgres executar:
 ```bash
 $ docker-compose up
