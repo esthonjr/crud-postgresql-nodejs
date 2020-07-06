@@ -36,3 +36,9 @@ client.query(query, (err, res) => {
     }
     client.end();
 });
+
+module.exports = {
+    psqlRead: () => {
+      console.log('read');
+    },
+  };
