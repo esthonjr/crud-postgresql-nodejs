@@ -1,26 +1,33 @@
 require('dotenv').config();
 
-var psqlRead = require('./read');
+const crud = require('./crud');
+// const readCursor = require('./read-cursor');
 
-var args = process.argv.slice(2);
+const args = process.argv.slice(2);
 
 // console.log(args);
 
 switch (args[0]) {
     case 'create':
-        psqlCreate();
+        crud.create();
         break;
     case 'read':
-        psqlRead.psqlRead();
+        crud.read();
         break;
     case 'update':
-        psqlUpdate();
+        crud.update();
         break;
     case 'delete':
-        psqlDelete();
+        crud.delete();
+        break;
+    case 'insert':
+        crud.insert();
         break;
     case 'readCursor':
-        psqlReadCursor();
+        crud.readCursor();
+        break;
+    case 'drop':
+        crud.drop();
         break;
     default:
         break;
