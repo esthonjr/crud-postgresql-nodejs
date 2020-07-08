@@ -8,7 +8,6 @@ Este pacote é um exemplo simples de CRUD (Create, read, update and delete) com 
   - [Configuração das variáveis de ambiente](#configuração-das-variáveis-de-ambiente)
   - [Utilização](#utilização)
   - [Observações](#observações)
-  - [TODO](#todo)
 
 ## Instalação
 ```bash
@@ -54,7 +53,3 @@ $ node index.js drop # para deletar a tabela
 - Para a leitura de dados no bd, dependendo do volume, pode afetar a performance do sistema porque as informações são carregadas na memória. Existe uma forma de leitura usando cursor que melhora isso daí;
 - Na configuração de conexão ao bd (user, host, database, password, port), podemos colocar hardcoded ou usar variáveis do sistema (assim o código fica mais limpo e resguardamos informações privadas);
 - O pool também usa variáveis de ambiente se não fornecermos as configs, a exemplo da single connection
-
-## TODO
-- startar psql docker pelo nodejs
-- pagina com exibicao do read
