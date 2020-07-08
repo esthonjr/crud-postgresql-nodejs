@@ -2,12 +2,15 @@
 Todas as mudanças deste projeto serão documentadas neste arquivo.
 
 ## Unreleased
-- startar psql docker pelo nodejs
 - pagina com exibicao do read da base
 
 ## 0.0.6
 ### Added
 - Changelog
+- Startar psql docker pelo nodejs
+  
+### Changed
+- Alterando porta do psql no docker para evitar conflito com psql nativo
 
 ## 0.0.5 - 2020-07-06
 ### Added
@@ -17,6 +20,9 @@ Todas as mudanças deste projeto serão documentadas neste arquivo.
   
 ### Changed
 - Readme
+
+### Removed
+- Scripts individuais do CRUD
 
 ## no-docker - 2020-07-03
 ### Added

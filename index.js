@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const crud = require('./crud');
+const psqlDocker = require('./psqlDocker');
 // const readCursor = require('./read-cursor');
 
 const args = process.argv.slice(2);
@@ -28,6 +29,12 @@ switch (args[0]) {
         break;
     case 'drop':
         crud.drop();
+        break;
+    case 'psql-start':
+        psqlDocker.start();
+        break;
+    case 'psql-stop':
+        psqlDocker.stop();
         break;
     default:
         break;

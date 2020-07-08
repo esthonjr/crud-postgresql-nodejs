@@ -15,11 +15,12 @@ $ npm install
 ```
 
 ## Configuração do postgresql (Docker)
-No diretório postgres executar:
+Para startar o postgresql no Docker:
 ```bash
-$ docker-compose up
+$ node index.js psql-start # para startar o postgresql no Docker
+$ node index.js psql-stop # para parar o postgresql no Docker
 ```
-Para Conectar ao database. Utilizar o usuario, senha e bd especificados no database.env.
+Para conectar ao database, utilizar o usuário, senha e bd especificados no arquivo database.env.
 ```
 $ docker-compose run database bash
 # psql --host=database --username=esthonjr --dbname=testdb
@@ -37,6 +38,8 @@ PGPORT=5432
 
 ## Utilização
 
+Comandos disponíveis:
+
 ```bash
 $ node index.js create # para criar a tabela
 $ node index.js read # para ler tabela
@@ -45,6 +48,8 @@ $ node index.js update # para fazer update dos dados
 $ node index.js insert # para inserir dados
 $ node index.js delete # para deletar os dados
 $ node index.js drop # para deletar a tabela
+$ node index.js psql-start # para startar o postgresql no Docker
+$ node index.js psql-stop # para parar o postgresql no Docker
 ```
 
 ## Observações
