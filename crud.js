@@ -4,7 +4,12 @@ const Cursor = require('pg-cursor');
 
 const pool = new Pool();
 pool.on('error', (err, client) => {
-    console.error('Error:', err);
+    console.error('Unexpected error on idle client:', err);
+    process.exit(-1);
+});
+
+pool.on('connect', (client) => {
+    console.log('New client connected to pool');
 });
 
 module.exports = {
@@ -84,11 +89,8 @@ module.exports = {
         
         client.query(query, (err, res) => {
             if (err) {
-                console.error(err);
-                return;
-            }
-            if (err) {
-                console.error(err);
+                console.error('Error deleting data:', err);
+                client.end();
                 return;
             }
             console.log('Data deleted');
@@ -155,11 +157,8 @@ module.exports = {
         
         client.query(query, (err, res) => {
             if (err) {
-                console.error(err);
-                return;
-            }
-            if (err) {
-                console.error(err);
+                console.error('Error dropping table:', err);
+                client.end();
                 return;
             }
             console.log('Table deleted');
